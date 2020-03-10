@@ -1,0 +1,27 @@
+<!--components/dailyData.wxml-->
+<view class="layoutDailyleft">
+  <view class='title'>新型冠状病毒肺炎实时动态</view>
+  <view class='layoutDailyleftText danger'> <view class='text'>确诊: </view>{{dailyTextContent.confirmedCount}}
+    <view class='thanYes'>较昨日{{incrData.confirmedIncr}}</view>
+  </view>
+  <view class='layoutDailyleftText warn'><view class='text'>疑似: </view>{{dailyTextContent.suspectedCount}}
+    <view class='thanYes'>较昨日{{incrData.suspectedIncr}}</view>
+  </view>
+    <view class='layoutDailyleftText error'> <view class='text'>重症：</view>{{dailyTextContent.seriousCount}}
+<view class='thanYes'>较昨日{{incrData.seriousIncr}}</view>
+  </view>
+  <view class='layoutDailyleftText dethod'> <view class='text'>死亡：</view>{{dailyTextContent.deadCount}} 
+   <view class='thanYes'>较昨日{{incrData.deadIncr}}</view>
+  </view>
+  <view class='layoutDailyleftText curd'><view class='text'>治愈：</view>{{dailyTextContent.curedCount}}
+    <view class='thanYes'>较昨日{{incrData.curedIncr}}</view>
+  </view>
+  <view class="layoutDailyRight">
+    <view style="flex:1;"></view>
+    <view>
+      <view>数据更新于：{{updateTime}}</view>
+      <view>数据来源：各地卫健委</view>
+    </view>
+  </view>
+</view>
+

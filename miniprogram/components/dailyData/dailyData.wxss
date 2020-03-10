@@ -1,0 +1,54 @@
+/* components/dailyData.wxss */
+.layoutDailyleft{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  height: 100%;
+  width: 700rpx;
+  padding-left: 20rpx;
+  font-weight: 700;
+}
+.layoutDailyleft .title{
+  font-size: 25px;
+
+}
+.layoutDailyleftText{
+  font-size: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+.layoutDailyleftText .text{
+  font-size: 13px;
+}
+.layoutDailyleftText .thanYes{
+  font-size: 10px;
+  color: #dadada;
+  padding-left: 5px;
+}
+.layoutDailyleft .error{
+  color: rgb(235, 164, 72);
+}
+.layoutDailyleft .danger{
+  color: #F56C6C;
+}
+.layoutDailyleft .warn{
+  color: rgb(230, 176, 96);
+}
+.layoutDailyleft .dethod{
+  color: #909399;
+}
+.layoutDailyleft .curd{
+  color: #67C23A;
+}
+.layoutDailyRight{
+  width: 700rpx;
+  font-weight: 200;
+  /* height: 160px; */
+  /* padding-left: 400rpx; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+  font-size: 10px;
+  /* flex-direction: column; */
+}

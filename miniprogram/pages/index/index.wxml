@@ -1,0 +1,48 @@
+D<!-- index.wxml -->
+<view class="container">
+  <view class="textContent">
+    <!-- <image src="../../image/backlground.jpg" class="imageBackground"></image> -->
+    <daily-display dailyTextContent='{{dailyTextContent}}'></daily-display>
+  </view>
+  <!-- <view style="width:100%;height:260px;"></view> -->
+  <view class='mapTitle'>
+    <view class="bottom">
+      <view class='circle' />
+      <span class='mapTitleText'>{{mapTitle}}</span>
+    </view>
+    <view>
+      <!-- <i-button bind:click="handleOpen1" i-class='menuBtn' > -->
+      <view class="menuBtn" bindtap='menuClick'>
+        <i-icon type="createtask_fill" size='30' />
+      </view>
+      <!-- </i-button> -->
+    </view>
+  </view>
+  <ec-canvas style="" id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+  <view class="caption-wrap" hidden="{{mapTitle!=='各地详细数据'}}">
+    <i-collapse name="{{name}}" accordion wx:for-item='item'>
+      <i-collapse-item title="{{item.name}}" label="{{'确诊人数：'+item.value}}" name="{{item.key}}" wx:for="{{mapData}}" wx:key="{{item.key}}">
+        <view slot="content">
+          <view class="collapse-item-content">
+            <view class="header">
+            <view class="first">地区</view>
+            <view style="flex:1" class="danger">确诊</view>
+            <view style="flex:1" class="warn">疑似</view>
+            <view style="flex:1" class="curd">治愈</view>
+            <view style="flex:1" class="dethod">死亡</view>
+          </view>
+          <view wx:for="{{item.cities}}" wx:for-item='_item' class="conten">
+            <view class="first">{{_item.cityName}}</view>
+            <view style="flex:1" class="danger">{{_item.confirmedCount}}</view>
+            <view style="flex:1" class="warn">{{_item.suspectedCount}}</view>
+            <view style="flex:1" class="curd">{{_item.curedCount}}</view>
+            <view style="flex:1" class="dethod">{{_item.deadCount}}</view>
+          </view>
+          </view>
+        </view>
+      </i-collapse-item>
+    </i-collapse>
+  </view>
+  <current-map id='currentMap' />
+</view>
+<i-action-sheet visible="{{ visible1 }}" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel1" bind:click="handleClickItem1" />
