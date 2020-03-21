@@ -1,0 +1,2 @@
+<!--components/currentMap/currentMap.wxml-->
+<view hidden="{{visable}}" >444444</view>
